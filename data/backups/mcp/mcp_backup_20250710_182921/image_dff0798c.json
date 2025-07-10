@@ -1,0 +1,58 @@
+{
+  "image_id": "dff0798c-7003-4402-8f21-ffb377552ba2",
+  "timestamp": "2025-07-10T18:28:41.555943",
+  "project_name": "SimpleGenerator_Dataset",
+  "source_image": "data/input/character_reference.jpg",
+  "generated_image": "output/generated/variation_003.png",
+  "relative_path": "variation_003.png",
+  "image_hash": "841e09538eace1759760040bedb43dbc",
+  "image_info": {
+    "width": 832,
+    "height": 1216,
+    "format": "PNG",
+    "mode": "RGB",
+    "file_size": 1283916
+  },
+  "duplicate_flag": false,
+  "generation_params": {
+    "prompt_text": "professional portrait of a person, business attire, high quality, detailed, photorealistic, corporate headshot, side profile view, elegant pose",
+    "negative_prompt": "blurry, low quality, distorted, deformed, ugly, bad anatomy, nsfw, inappropriate content, suggestive",
+    "denoising_strength": 0.4,
+    "cfg_scale": 7.5,
+    "sampler": "Euler a",
+    "steps": 30,
+    "model_version": "sdxl:39ed52f2a78e934b3ba6e2a89f5b1c712de7dfea535525255b1aa35c5565e08b",
+    "latent_vector_seed": null,
+    "latent_interpolation_ratio": null
+  },
+  "ai_metadata": {
+    "clip_embedding_vector": null,
+    "embedding_description": "",
+    "identity_similarity_score": null,
+    "face_bank_reference": []
+  },
+  "processing": {
+    "controlnet_type": null,
+    "controlnet_params": {},
+    "inpainting_masks": [],
+    "augmentations_applied": []
+  },
+  "status": {
+    "generation_status": "success",
+    "error_message": null,
+    "generation_cost": 0.075,
+    "generation_time_seconds": 0.5974032878875732
+  },
+  "lora_training": {
+    "suitable_for_training": true,
+    "quality_score": 0.54375,
+    "training_tags": [
+      "portrait",
+      "photorealistic"
+    ],
+    "pose_category": "other",
+    "outfit_category": "other"
+  },
+  "additional_params": {},
+  "metadata_version": "2.0"
+}

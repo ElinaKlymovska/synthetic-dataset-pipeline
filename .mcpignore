@@ -1,0 +1,139 @@
+# MCP Ignore File - для системи метаданих
+# Виключає файли які не потрібні для обробки MCP
+
+# Python артефакти
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Віртуальні середовища
+venv/
+env/
+.venv/
+.env/
+ENV/
+env.bak/
+venv.bak/
+
+# Згенеровані зображення (великі файли)
+data/output/*.png
+data/output/*.jpg
+data/output/*.jpeg
+data/output/*.gif
+data/output/*.bmp
+data/output/*.tiff
+data/output/*.webp
+output/generated/*.png
+output/generated/*.jpg
+
+# Архіви та великі файли
+*.zip
+*.tar.gz
+*.rar
+*.7z
+data/character_dataset.zip
+
+# Логи та тимчасові файли
+logs/
+*.log
+data/metadata/
+*.tmp
+*.temp
+tmp/
+temp/
+
+# API токени та секрети
+config/tokens.env
+*.env
+.env
+secrets/
+.secrets/
+config/api_keys.yaml
+
+# IDE та редактори
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# OS специфічні файли
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Тестування
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Backup та restore файли
+data/backups/
+*.backup
+*.bak
+
+# Великі моделі та ваги
+*.pth
+*.pt
+*.bin
+*.safetensors
+models/
+checkpoints/
+
+# MCP система - ігноруємо лише backup файли
+mcp/*.backup
+mcp/temp/
+mcp/.temp/
+
+# Але ВКЛЮЧАЄМО основні конфігурації та JSON метадані
+!config/mcp_config.yaml
+!config/replicate_config.yaml
+!config/simple_config.yaml
+!mcp/*.json
+!scripts/mcp_*.py
+
+# Документація і README (опціонально)
+# *.md
+# docs/
+
+# Результати генерації (великі файли)
+character_*.png
+variation_*.png
+image_*.png
+
+# Тимчасові файли обробки
+processing/
+cache/
+.cache/ 

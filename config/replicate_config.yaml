@@ -1,0 +1,96 @@
+# Replicate API Configuration
+api:
+  base_url: "https://api.replicate.com/v1"
+  timeout: 300  # 5 minutes timeout for generation
+  
+# Available Models on Replicate
+models:
+  # Stable Diffusion XL for img2img
+  sdxl_img2img:
+    model: "stability-ai/sdxl:39ed52f2a78e934b3ba6e2a89f5b1c712de7dfea535525255b1aa35c5565e08b"
+    description: "Stable Diffusion XL for image-to-image generation"
+    
+  # Alternative: Realistic Vision for better photorealistic results
+  realistic_vision:
+    model: "cjwbw/realistic-vision-v5:ac732df83cea7fff18b5b7c5c43cb241f2e31d7c1a1e2c4b5c4b5c4b5c4b5c4b5c"
+    description: "Realistic Vision V5 for photorealistic images"
+
+# Generation Parameters
+generation:
+  target_count: 15
+  batch_size: 1
+  
+  # Image-to-Image parameters - lower strength to preserve character identity
+  img2img:
+    denoising_strength: 0.4      # Lower strength to preserve character features
+    cfg_scale: 10.0              # Higher guidance for better prompt following
+    steps: 40                    # More steps for better quality
+    width: 1024                  # Output width
+    height: 1024                 # Output height
+    guidance_scale: 10.0         # Same as cfg_scale for some models
+
+# Prompt Configuration for Photo Session
+prompts:
+  base_character: "young woman, full body, detailed face, high quality, photorealistic, sharp focus, professional photography"
+  
+  # Different poses and angles
+  pose_variations:
+    - "full body front view, standing pose, looking at camera"
+    - "full body back view, standing pose, elegant posture"
+    - "full body side view, standing pose, profile shot"
+    - "full body front view, blowing kiss, playful expression"
+    - "full body front view, lying on bed, front view"
+    - "full body side view, lying on bed, side view"
+    - "full body back view, lying on bed, back view"
+    - "full body front view, sitting pose, elegant"
+    - "full body front view, walking pose, dynamic"
+    - "full body front view, dancing pose, graceful"
+    - "full body front view, casual standing, natural"
+    - "full body front view, fashion pose, confident"
+    - "full body front view, portrait pose, close up"
+    - "full body front view, full length shot"
+    - "full body front view, three quarter view"
+    
+  # Different outfits and styles
+  outfit_variations:
+    - "elegant dress, formal wear, sophisticated"
+    - "bikini, swimwear, beach style"
+    - "lingerie, intimate wear, elegant"
+    - "business suit, professional attire, formal"
+    - "Hinata from Naruto cosplay, orange outfit, ninja style"
+    - "cocktail dress, evening wear, glamorous"
+    - "red long dress with cleavage, elegant evening gown"
+    - "casual dress, everyday wear, comfortable"
+    - "party dress, festive attire, celebration"
+    - "summer dress, light fabric, breezy"
+    - "winter dress, warm fabric, cozy"
+    - "formal gown, red carpet style, luxurious"
+    - "minimalist dress, simple design, clean"
+    - "vintage dress, retro style, classic"
+    - "modern dress, contemporary fashion, trendy"
+    
+  # Style variations - keep consistent for LoRA training
+  style_variations:
+    - "realistic, photographic, 8k, professional portrait, studio lighting"
+    
+  # Background variations - keep simple and consistent
+  background_variations:
+    - "studio background, professional lighting, clean"
+    - "bedroom background, soft lighting, intimate"
+    - "studio background, dramatic lighting, fashion"
+    - "studio background, natural lighting, elegant"
+    - "studio background, warm lighting, cozy"
+
+# Output Configuration
+output:
+  format: "png"                  # Output format
+  quality: 95                    # JPEG quality (if using JPEG)
+  save_metadata: true            # Save generation metadata
+  create_zip: true               # Create zip archive of results
+  
+# Cost Optimization
+cost_optimization:
+  max_retries: 3                 # Max retries for failed requests
+  retry_delay: 5                 # Seconds between retries
+  batch_processing: true         # Process in batches to save costs
+  cache_results: true            # Cache results to avoid regeneration 

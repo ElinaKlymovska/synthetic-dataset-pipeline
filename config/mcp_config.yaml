@@ -1,0 +1,125 @@
+# MCP (Metadata Collection Protocol) Configuration
+# Configuration for saving metadata for LoRA training datasets
+
+# Directory settings
+directories:
+  mcp_output: "mcp"                    # Directory for JSON metadata files
+  image_output: "output/generated"     # Directory for generated images (updated for SimpleGenerator)
+  analysis_output: "data/analysis"    # Directory for character analysis
+  
+# Metadata collection settings
+metadata:
+  version: "2.0"                       # Metadata format version
+  auto_save: true                      # Automatically save metadata after generation
+  include_image_hash: true             # Calculate MD5 hash for duplicate detection
+  include_file_info: true              # Include file size, dimensions, format
+  include_generation_cost: true        # Track generation costs
+  include_generation_time: true        # Track generation time
+  
+# Quality assessment settings
+quality_assessment:
+  enabled: true
+  identity_score_weight: 0.4           # Weight for identity preservation (40%)
+  resolution_score_weight: 0.3         # Weight for image resolution (30%)
+  file_size_score_weight: 0.2          # Weight for reasonable file size (20%)
+  format_score_weight: 0.1             # Weight for proper format (10%)
+  
+  # Target values
+  target_resolution: 1024              # Target image resolution
+  min_file_size_mb: 0.5               # Minimum acceptable file size (MB)
+  max_file_size_mb: 5.0               # Maximum acceptable file size (MB)
+  preferred_format: "PNG"             # Preferred image format
+
+# Training suitability settings
+training_suitability:
+  min_quality_score: 0.7              # Minimum quality score for training
+  min_identity_score: 0.8             # Minimum identity preservation score
+  require_success_status: true        # Only include successful generations
+  exclude_duplicates: true            # Exclude detected duplicates
+  
+# Tag extraction settings
+tag_extraction:
+  pose_tags:
+    - "front_view"
+    - "side_view" 
+    - "back_view"
+    - "full_body"
+    - "portrait"
+    - "three_quarter_view"
+    
+  style_tags:
+    - "photorealistic"
+    - "anime_style"
+    - "artistic"
+    - "cinematic"
+    
+  pose_categories:
+    standing: ["standing", "upright", "vertical"]
+    sitting: ["sitting", "seated", "chair"]
+    lying: ["lying", "laying", "bed", "prone"]
+    walking: ["walking", "stepping", "moving"]
+    dancing: ["dancing", "dance", "graceful"]
+    action: ["jumping", "running", "dynamic"]
+    
+  outfit_categories:
+    dress: ["dress", "gown", "frock"]
+    suit: ["suit", "formal", "business"]
+    swimwear: ["bikini", "swimsuit", "swimwear"]
+    lingerie: ["lingerie", "underwear", "intimate"]
+    cosplay: ["cosplay", "costume", "character"]
+    casual: ["casual", "everyday", "comfortable"]
+    
+# Dataset analysis settings
+dataset_analysis:
+  enable_summary: true                 # Generate dataset summaries
+  track_distributions: true           # Track pose/outfit distributions
+  calculate_averages: true            # Calculate average quality scores
+  identify_gaps: true                 # Identify missing pose/outfit combinations
+  
+# Export settings
+export:
+  formats: ["json"]                   # Supported export formats
+  include_thumbnails: false           # Include image thumbnails in metadata
+  compress_embeddings: true          # Compress large embedding vectors
+  
+# Integration settings
+integration:
+  replicate_generator: true          # Integrate with ReplicateGenerator
+  simple_generator: true             # Integrate with SimpleGenerator
+  identity_generator: true           # Integrate with IdentityPreservingGenerator
+  auto_backup: true                  # Auto backup metadata files
+  
+# Backup settings
+backup:
+  enabled: true
+  interval_hours: 24                 # Backup every 24 hours
+  max_backups: 7                     # Keep maximum 7 backups
+  backup_directory: "data/backups/mcp"
+  
+# Validation settings
+validation:
+  validate_on_save: true             # Validate metadata before saving
+  required_fields:                   # Required fields for valid metadata
+    - "image_id"
+    - "timestamp" 
+    - "source_image"
+    - "generated_image"
+    - "generation_params.prompt_text"
+    - "status.generation_status"
+    
+  schema_validation: true            # Validate against JSON schema
+  
+# Performance settings
+performance:
+  batch_processing: true             # Process multiple images at once
+  parallel_hashing: true             # Calculate hashes in parallel
+  cache_image_info: true             # Cache image information
+  max_workers: 4                     # Maximum worker threads
+  
+# Logging settings
+logging:
+  level: "INFO"                      # Logging level (DEBUG, INFO, WARNING, ERROR)
+  log_file: "logs/mcp_metadata.log"  # Log file path
+  log_format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  max_log_size_mb: 10               # Maximum log file size
+  backup_count: 5                   # Number of backup log files 

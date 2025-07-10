@@ -1,0 +1,57 @@
+{
+  "image_id": "e0055c31-de56-4734-9c79-f329a86b5eb2",
+  "timestamp": "2025-07-10T18:27:46.424188",
+  "project_name": "SimpleGenerator_Professional",
+  "source_image": "data/input/character_reference.jpg",
+  "generated_image": "output/generated/variation_001.png",
+  "relative_path": "variation_001.png",
+  "image_hash": "a9445fe54e739f07307266f8f5a7b28e",
+  "image_info": {
+    "width": 832,
+    "height": 1216,
+    "format": "PNG",
+    "mode": "RGB",
+    "file_size": 1189928
+  },
+  "duplicate_flag": false,
+  "generation_params": {
+    "prompt_text": "professional portrait of a person, business attire, confident facial expression, professional demeanor",
+    "negative_prompt": "blurry, low quality, distorted, deformed, ugly, bad anatomy, nsfw, inappropriate content, suggestive",
+    "denoising_strength": 0.4,
+    "cfg_scale": 7.5,
+    "sampler": "Euler a",
+    "steps": 30,
+    "model_version": "SDXL-1.0",
+    "latent_vector_seed": null,
+    "latent_interpolation_ratio": null
+  },
+  "ai_metadata": {
+    "clip_embedding_vector": null,
+    "embedding_description": "",
+    "identity_similarity_score": null,
+    "face_bank_reference": []
+  },
+  "processing": {
+    "controlnet_type": null,
+    "controlnet_params": {},
+    "inpainting_masks": [],
+    "augmentations_applied": []
+  },
+  "status": {
+    "generation_status": "success",
+    "error_message": null,
+    "generation_cost": 0.075,
+    "generation_time_seconds": 45.0
+  },
+  "lora_training": {
+    "suitable_for_training": true,
+    "quality_score": 0.54375,
+    "training_tags": [
+      "portrait"
+    ],
+    "pose_category": "other",
+    "outfit_category": "other"
+  },
+  "additional_params": {},
+  "metadata_version": "2.0"
+}

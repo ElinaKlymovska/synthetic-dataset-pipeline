@@ -1,0 +1,20 @@
+base_prompt: professional portrait of a person, business attire, high quality, detailed, photorealistic, corporate headshot
+guidance_scale: 7.5
+height: 1024
+model: stability-ai/sdxl:39ed52f2a78e934b3ba6e2a89f5b1c712de7dfea535525255b1aa35c5565e08b
+negative_prompt: blurry, low quality, distorted, deformed, ugly, bad anatomy, nsfw, inappropriate content, suggestive
+num_images: 15
+num_inference_steps: 30
+seed: -1
+variations:
+- confident facial expression, professional demeanor
+- soft studio lighting, corporate environment
+- side profile view, elegant pose
+- professional hairstyle, business appropriate
+- formal business suit, professional attire
+- office background, corporate setting
+- standing pose, confident posture
+- minimal professional makeup, natural look
+- professional accessories, business style
+- modern office environment, clean background
+width: 1024

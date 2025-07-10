@@ -1,0 +1,57 @@
+{
+  "image_id": "26b07199-06b5-4e64-92fc-58a70e1169a0",
+  "timestamp": "2025-07-10T18:20:50.581102",
+  "project_name": "GenImg_Test",
+  "source_image": "data/input/character_reference.jpg",
+  "generated_image": "data/output/character_010.png",
+  "relative_path": "character_010.png",
+  "image_hash": "e9bfd0be6f2614e1b785393015d70f33",
+  "image_info": {
+    "width": 832,
+    "height": 1216,
+    "format": "PNG",
+    "mode": "RGB",
+    "file_size": 1308514
+  },
+  "duplicate_flag": false,
+  "generation_params": {
+    "prompt_text": "portrait of beautiful woman, elegant dress, professional lighting",
+    "negative_prompt": "blurry, low quality, distorted",
+    "denoising_strength": 0.4,
+    "cfg_scale": 7.5,
+    "sampler": "Euler a",
+    "steps": 30,
+    "model_version": "SDXL-1.0",
+    "latent_vector_seed": null,
+    "latent_interpolation_ratio": null
+  },
+  "ai_metadata": {
+    "clip_embedding_vector": null,
+    "embedding_description": "",
+    "identity_similarity_score": 0.85,
+    "face_bank_reference": []
+  },
+  "processing": {
+    "controlnet_type": null,
+    "controlnet_params": {},
+    "inpainting_masks": [],
+    "augmentations_applied": []
+  },
+  "status": {
+    "generation_status": "success",
+    "error_message": null,
+    "generation_cost": 0.075,
+    "generation_time_seconds": 42.0
+  },
+  "lora_training": {
+    "suitable_for_training": true,
+    "quality_score": 0.8837499999999999,
+    "training_tags": [
+      "portrait"
+    ],
+    "pose_category": "other",
+    "outfit_category": "dress"
+  },
+  "additional_params": {},
+  "metadata_version": "2.0"
+}
